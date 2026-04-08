@@ -1,4 +1,4 @@
-function validacao () {
+function validacao() {
 
     let valido = true;
     let nome = document.getElementByld("nome").value;
@@ -18,80 +18,141 @@ function validacao () {
         "12324354657",
         "98765432112"
     ]
-    
+
     let termo = document.getElementById("termo")
 
     if (nome.length === 0) {
-    alert ("informe seu nome");
-    valido = false;
+        alert("informe seu nome");
+        valido = false;
     } else if (nome.lenght < 3) {
-    alert ("O nome deve ter no mínimo 3 caracteres.");
-    valido = false;
+        alert("O nome deve ter no mínimo 3 caracteres.");
+        valido = false;
     }
 
-     if (email.length === 0) {
-    alert ("informe seu email");
-    valido = false;
+    if (email.length === 0) {
+        alert("informe seu email");
+        valido = false;
     } else if (!email.includes("@")) {
-    alert ("O email deve ter @");
-    valido = false;
+        alert("O email deve ter @");
+        valido = false;
 
     }
 
-     if (telefone.lenght === 0) {
-    alert ("informe seu telefone");
-    valido = false;
+    if (telefone.lenght === 0) {
+        alert("informe seu telefone");
+        valido = false;
     } else if (telefone.lenght < 8) {
-    alert ("O telefone deve ter no mínimo 8 dígitos.");
-    valido = false;
+        alert("O telefone deve ter no mínimo 8 dígitos.");
+        valido = false;
     }
 
-     if (cpf.lenght == 0) {
-    alert ("Campo CPF obrigatório");
-    valido = false;
+    if (cpf.lenght == 0) {
+        alert("Campo CPF obrigatório");
+        valido = false;
     } else if (cpf_registrado.includes(cpf)) {
-    alert ("O cpf que você digitou já está cadastrado");
-    valido = false;
+        alert("O cpf que você digitou já está cadastrado");
+        valido = false;
     }
 
-     if (idade.lenght === 0) {
-    alert ("informe sua idade");
-    valido = false;
+    if (idade.lenght === 0) {
+        alert("informe sua idade");
+        valido = false;
     } else if (idade < 18) {
-    alert ("Você deve ser maior de idade para continuar o processo de adoção.");
-    valido = false;
+        alert("Você deve ser maior de idade para continuar o processo de adoção.");
+        valido = false;
     }
 
-    if (!moradia){
-    alert("Selecione o tipo de moradia")
-    valido = false;
+    if (!moradia) {
+        alert("Selecione o tipo de moradia")
+        valido = false;
     } else if (moradia && moradia.value === "apartamento" && quintal && quintal.value === "sim") {
-        alert ("Erro, quem mora em apartamento não pode ter quintal.");
+        alert("Erro, quem mora em apartamento não pode ter quintal.");
         valido = false;
     } else if (moradia && moradia.value === "casa" && quintal && quintal.value === "nao") {
-        alert ("Aviso: por naõ possuir quintal, o uso de espaço externo pode ser limitado");
+        alert("Aviso: por naõ possuir quintal, o uso de espaço externo pode ser limitado");
     }
 
     if (!quintal) {
-        alert ("selecione se tem quintal");
+        alert("selecione se tem quintal");
         valido = false;
     }
 
     if (!pet_antes) {
-        alert ("Você já teve animais alguma vez antes?");
+        alert("Você já teve animais alguma vez antes?");
         valido = false;
     } else if (pet_antes && pet_antes.value === "nao") {
-        alert ("Como você nunca teve nenhum amiguinho pet antes, pode haver um acompanhamento da ONG!");
+        alert("Como você nunca teve nenhum amiguinho pet antes, pode haver um acompanhamento da ONG!");
     }
 
 
     if (!financeiro) {
-        alert ("Você tem condição financeira para ter um amiguinho pet?");
+        alert("Você tem condição financeira para ter um amiguinho pet?");
         valido = false;
     } else if (finaceiro && financeiro.value === "nao") {
-        alert ("Você marcou que não tem condição para cuidar de um animalzinho, opte por um momento em que você tenha condições de dar uma vida boa para seu pet");
+        alert("Você marcou que não tem condição para cuidar de um animalzinho, opte por um momento em que você tenha condições de dar uma vida boa para seu pet");
         valido = false;
     }
 
+    if (horas.length === 0) {
+        alert("informe quantas horas seu pet ficará sozinho por dia");
+        valido = false;
+    } else if (isNaN(horas)) {
+        alert("As horas devem ser informadas por números");
+        valido = false;
+    } else if (horas>= 8) {
+    let porque = prompt("Atenção!Não é recomendado deixar o animalzinho tanto tempo sozinho, justifique o porquê ele ficará tanto tempo sozinho");
+
+    if (!porque || porque.length === 0) {
+        alert("Justifique para que o cadastro seja concluido");
+        valido = false;
+    }
+}
+
+if (motivo.lenght === 0) {
+    alert("Informe o motivo da adoção");
+    valido = false;
+} else if (motivo.length < 10) {
+    alert("O motivo deve ter no minimo 10 caracteres");
+    valido = false;
+} else if ((motivo === "porque sim") || (motivo === "porque quero") || (motivo === "porque eu quero") || (motivo === "Porque sim") || (motivo === "Porque quero") || (motivo === "Porque eu quero")) {
+    alert("Resposta muito genérica , não sera possivel continuar seu cadastro")
+    valido = false;
+} else if ((motivo === "pois decidi hoje") || (motivo === "pois hoje eu decidi que queria")) {
+    alert("Alerta de desisão por impulso, se caso decidiu adotar seu pert hoje, tenha responsabilidade!")
+}
+
+if (!termo.checked) {
+    alert("É necessario que o termo seja aceito");
+    valido = false;
+}
+
+if (valido) {
+    if (moradia && moradia.value === "apartamento") {
+        let resposta1 = prompt("O apartamento permite animais?");
+    } else if ((moradia && moradia.value === "casa") && (quintal && quintal.value === "sim")) {
+        let resposta2 = prompt("O quintal é seguro?");
+    }
+}
+if (!valido) {
+    return;
+}
+
+if (valido) {
+    alert("Cadastro\n Nome: " + nome + "\n" +
+        "email:" + email + "\n" +
+        "telefone:" + telefone + "\n" +
+        "CPF:" + CPF + "\n" +
+        "cidade:" + cidade + "\n" +
+        "idade:" + idade + "\n" +
+        "Mora em:" + moradia.value + "\n" +
+        "Apresentou:" + quintal.value + "ter quintal em casa \n" +
+        "Apresentou:" + pet_antes.value + "ter tipo um animal antes\n" +
+        "Apresentou:" + fianceiro.value + "condiçoes boas para ter um animal\n" +
+        "Animal vai ficar sozinho:" + horas + "horas\n" +
+        "Motivo adoção:" + motivo + "\n");
 
     }
+
+}
+       
+
