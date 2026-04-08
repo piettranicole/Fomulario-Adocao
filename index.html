@@ -15,6 +15,10 @@
     <main>
         <h1>Formulário de Adoção</h1>
 
+          <form id="Nome">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+
         <form id="formulario">
             <label for="idade">Idade:</label>
             <input type="number" id="idade" required>
@@ -25,29 +29,19 @@
             <label for="cpf">CPF:</label>
             <input type="number" id="cpf" required>
 
-            <label for="moradia">Tipo de Moradia:</label>
-            <select id="moradia" required>
-                <option value="">Selecione</option>
-                <option value="apartamento">Apartamento</option>
-                <option value="casa">Casa</option>
-            </select>
-
+           
            <div>
-            <label for="tipo">Tipo de moradia:</label><br>
-             <input type="radio" name="tipo" value="casa" required /> Casa
-            <input type="radio" name="tipo" value="apartamento" /> Apartamento</br>
+            <label for="moradia">Tipo de moradia:</label><br>
+             <input type="radio" name="moradia" value="casa" required /> Casa
+            <input type="radio" name="moradia" value="apartamento" /> Apartamento</br>
         </div>
 
 
-                <div>
-                    <label for="quintalSeguro">O quintal é seguro?</label>
-                    <select id="quintalSeguro">
-                        <option value="">Selecione</option>
-                        <option value="sim">Sim</option>
-                        <option value="nao">Não</option>
-                    </select>
-                </div>
-            </div>
+               <div>
+            <label for="quintal">Possui quintal?:</label><br>
+           <input type="radio" name="quintal" value="sim" required /> Sim
+            <input type="radio" name="quintal" value="nao" /> Não</br>
+        </div>
 
             <label for="pet">Deseja adotar um pet?</label>
             <select id="pet" required>
