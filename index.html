@@ -15,63 +15,121 @@
     <main>
         <h1>Formulário de Adoção</h1>
 
-          <form id="Nome">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" required>
+          <h2>Cadastro</h2>
+          <form>
+            <div>
+                <label for="nome">Nome completo</label>
+                <input type="text"> id="nome" required
+            </div>
 
-        <form id="formulario">
-            <label for="idade">Idade:</label>
-            <input type="number" id="idade" required>
 
-            <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone" required>
+            <div>
+                <label for="telefone">Telefone</label>
+                <input type="numeber"> id="telefone" required
+            </div>
 
-            <label for="cpf">CPF:</label>
-            <input type="number" id="cpf" required>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="text"> id="email" required
+            </div>
+            
+
+            <div>
+                <label for="cpf">CPF</label>
+                <input type="number"> id="cpf" required
+            </div>
+
+
+            <div>
+                <label for="cidade">Cidade</label>
+                <input type="text"> id="cidade" required
+            </div>
+
+
+
+            <div>
+                <label for="idade">Idade</label>
+                <input type="number"> id="idade" required
+            </div>
+
+
+            <div>
+                <label for="moradia">Tipo de moradia</label>
+                <input type="radio" name="moradia" value="casa" required />Casa
+                 <input type="radio" name="moradia" value="apartamento" required />Apartamento
+            </div>
+
+
+
+            <div>
+                <label for="quintal">Você possui quintal na sua casa?</label>
+                <input type="radio" name="quintal" value="sim" required />sim
+                 <input type="radio" name="quintal" value="não" required />não
+            </div>
+
+
+            <div>
+                <label for="pet_antes">Você já teve pet antes?</label>
+                <input type="radio" name="pet_antes" value="sim" required />Sim
+                 <input type="radio" name="pet_antes" value="nao" required />Não
+            </div>
+
+
+
+            <div>
+                <label for="finaceiro">Você tem condições financeiras para cuidar do pet?</label>
+                <input type="radio" name="finaceiro" value="sim" required />Sim
+                 <input type="radio" name="finaceiro" value="nao" required />Não
+            </div>
+
+
+
+            <div>
+                <label for="pet_antes">Você já teve pet antes?</label>
+                <input type="radio" name="pet_antes" value="sim" required />Sim
+                 <input type="radio" name="pet_antes" value="nao" required />Não
+            </div>
+
+
 
            
-           <div>
-            <label for="moradia">Tipo de moradia:</label><br>
-             <input type="radio" name="moradia" value="casa" required /> Casa
-            <input type="radio" name="moradia" value="apartamento" /> Apartamento</br>
-        </div>
+            <div>
+                <label for="horas">Quantas horas o pet ficará sozinho?</label>
+                <input type="text"> id="horas" required
+            </div>
+       
 
 
-               <div>
-            <label for="quintal">Possui quintal?:</label><br>
-           <input type="radio" name="quintal" value="sim" required /> Sim
-            <input type="radio" name="quintal" value="nao" /> Não</br>
-        </div>
+            
+            <div>
+                <label for="idade">Idade</label>
+                <input type="number"> id="idade" required
+            </div>
+            
 
-          
-            <label for="hora">Quantas horas o pet ficará sozinho por dia?</label>
-            <input type="number" id="hora" required>
+            
+            <div>
+                <label for="motivo">Por qual motivo você gostaria de adotar um pet?</label>
+                <br>(Respostas como "Porque eu quero" não serão aceitas):</br><label>
+                <input type="textarea"> id="motivo" required/>
+            </div>
 
-            <label for="mensagem">Motivo da adoção:</label>
-            <textarea id="mensagem" rows="3" required></textarea>
+           
+           <p>Alerta:Caso você tenha decidido adotar o pet hoje, tome cuidado e tenha muita responsabilidade!!</p>
 
-            <label for="financeiro">Condição financeira:</label>
-            <select id="financeiro" required>
-                <option value="">Selecione</option>
-                <option value="boa">Boa</option>
-                <option value="ruim">Ruim</option>
-            </select>
 
-            <label for="decisao">Quando decidiu adotar?</label>
-            <select id="decisao" required>
-                <option value="">Selecione</option>
-                <option value="hoje">Hoje</option>
-                <option value="planejado">Planejado</option>
-            </select>
+            <div>
+                <label for="termo"><u>Aceito os termos de responsabilidade: </u></>label>
+                <input type="checkbox"> id="termo" required />
+            </div>
+            
 
-            <label>
-                <input type="checkbox" id="termo"> Aceito os termos
-            </label>
-
-            <button type="submit">Enviar</button>
+           
+        
             
         </form>
-    </main>
+   
     
     <script src="script.js"></script>
 </body>
