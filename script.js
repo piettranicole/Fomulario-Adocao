@@ -1,17 +1,18 @@
 function validacao() {
 
     let valido = true;
-    let nome = document.getElementByld("nome").value;
-    let email = document.getElementByld("email").value;
-    let telefone = document.getElementByld("telefone").value;
-    let cidade = document.getElementByld("idade").value;
-    let horas = document.getElementByld("horas").value;
-    let motivo = document.getElementByld("motivo").value;
-    let cpf = document.getElementByld("cpf").value;
-    let moradia = document.querySelector('input [name="moradia"]:checked');
-    let quintal = document.querySelector('input [name="quintal"]:checked');
-    let pet_antes = document.querySelector('input [name="pet_antes"]:checked');
-    let finaceiro = document.querySelector('input [name="financeiro"]:checked');
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    let telefone = document.getElementById("telefone").value;
+    let cidade = document.getElementById("cidade").value;
+    let idade = document.getElementById("idade").value;
+    let horas = document.getElementById("horas").value;
+    let motivo = document.getElementById("motivo").value;
+    let cpf = document.getElementById("cpf").value;
+    let moradia = document.querySelector('input[name="moradia"]:checked');
+    let quintal = document.querySelector('input[name="quintal"]:checked');
+    let pet_antes = document.querySelector('input[name="pet_antes"]:checked');
+    let financeiro = document.querySelector('input[name="financeiro"]:checked');
     let cpf_registrado = [
         "11111111111",
         "12345678909",
@@ -24,7 +25,7 @@ function validacao() {
     if (nome.length === 0) {
         alert("informe seu nome");
         valido = false;
-    } else if (nome.lenght < 3) {
+    } else if (nome.length < 3) {
         alert("O nome deve ter no mínimo 3 caracteres.");
         valido = false;
     }
@@ -38,15 +39,15 @@ function validacao() {
 
     }
 
-    if (telefone.lenght === 0) {
+    if (telefone.length === 0) {
         alert("informe seu telefone");
         valido = false;
-    } else if (telefone.lenght < 8) {
+    } else if (telefone.length < 8) {
         alert("O telefone deve ter no mínimo 8 dígitos.");
         valido = false;
     }
 
-    if (cpf.lenght == 0) {
+    if (cpf.length == 0) {
         alert("Campo CPF obrigatório");
         valido = false;
     } else if (cpf_registrado.includes(cpf)) {
@@ -54,13 +55,20 @@ function validacao() {
         valido = false;
     }
 
-    if (idade.lenght === 0) {
+    if (idade.length === 0) {
         alert("informe sua idade");
         valido = false;
     } else if (idade < 18) {
         alert("Você deve ser maior de idade para continuar o processo de adoção.");
         valido = false;
     }
+
+
+    if (cidade.length === 0) {
+        alert("informe sua cidade");
+        valido = false;
+    }
+
 
     if (!moradia) {
         alert("Selecione o tipo de moradia")
@@ -88,7 +96,7 @@ function validacao() {
     if (!financeiro) {
         alert("Você tem condição financeira para ter um amiguinho pet?");
         valido = false;
-    } else if (finaceiro && financeiro.value === "nao") {
+    } else if (financeiro && financeiro.value === "nao") {
         alert("Você marcou que não tem condição para cuidar de um animalzinho, opte por um momento em que você tenha condições de dar uma vida boa para seu pet");
         valido = false;
     }
@@ -108,7 +116,7 @@ function validacao() {
     }
 }
 
-if (motivo.lenght === 0) {
+if (motivo.length === 0) {
     alert("Informe o motivo da adoção");
     valido = false;
 } else if (motivo.length < 10) {
@@ -141,13 +149,13 @@ if (valido) {
     alert("Cadastro\n Nome: " + nome + "\n" +
         "email:" + email + "\n" +
         "telefone:" + telefone + "\n" +
-        "CPF:" + CPF + "\n" +
+        "CPF:" + cpf + "\n" +
         "cidade:" + cidade + "\n" +
         "idade:" + idade + "\n" +
         "Mora em:" + moradia.value + "\n" +
         "Apresentou:" + quintal.value + "ter quintal em casa \n" +
         "Apresentou:" + pet_antes.value + "ter tipo um animal antes\n" +
-        "Apresentou:" + fianceiro.value + "condiçoes boas para ter um animal\n" +
+        "Apresentou:" + financeiro.value + "condiçoes boas para ter um animal\n" +
         "Animal vai ficar sozinho:" + horas + "horas\n" +
         "Motivo adoção:" + motivo + "\n");
 
